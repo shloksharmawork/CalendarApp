@@ -1,0 +1,153 @@
+.gridContainer {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.monthNav {
+  display: flex;
+  gap: 16px;
+}
+
+.navBtn {
+  background: none;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.navBtn:hover {
+  background-color: var(--highlight-bg);
+  color: var(--accent-color);
+  border-color: var(--accent-hover);
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 16px;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 8px;
+}
+
+.dayCellWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  position: relative;
+}
+
+.dayCell {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.dayCell:hover:not(.empty) {
+  background-color: var(--highlight-bg);
+}
+
+.empty {
+  cursor: default;
+}
+
+.inRangeBg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 36px;
+  width: 100%;
+  background-color: var(--highlight-bg);
+  z-index: 1;
+}
+
+.inRangeBg.start {
+  left: 50%;
+  width: 50%;
+}
+
+.inRangeBg.end {
+  right: 50%;
+  width: 50%;
+}
+
+.selectedStart {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.selectedEnd {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.today {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* Notes indicator */
+.hasNote::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+.selectedStart.hasNote::after, .selectedEnd.hasNote::after {
+  background-color: white;
+}
+
+.clearBtn {
+  margin-top: 24px;
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.clearBtn:hover {
+  color: var(--danger-color);
+}

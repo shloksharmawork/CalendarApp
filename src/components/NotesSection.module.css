@@ -1,0 +1,49 @@
+.notesContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-bottom: 24px;
+  min-height: 20px;
+}
+
+.textArea {
+  flex: 1;
+  min-height: 200px;
+  width: 100%;
+  resize: none;
+  border: none;
+  border-left: 2px solid transparent;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+  margin: 0;
+  padding: 0 0 0 4px;
+  
+  /* Notepad line effect */
+  line-height: 32px;
+  background-image: repeating-linear-gradient(transparent, transparent 31px, var(--border-color) 31px, var(--border-color) 32px);
+  background-attachment: local;
+  
+  transition: border-color 0.2s;
+}
+
+.textArea:focus {
+  border-left: 2px solid var(--accent-color);
+  padding-left: 12px;
+}
