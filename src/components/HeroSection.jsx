@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './HeroSection.module.css';
+import heroImage from '../assets/hero_winter.png';
 
 const HeroSection = ({ currentMonth }) => {
   const year = currentMonth.getFullYear();
@@ -21,7 +22,7 @@ const HeroSection = ({ currentMonth }) => {
       </svg>
       
       <img 
-        src="/hero_winter.png" 
+        src={heroImage} 
         alt="Mountain landscape" 
         className={styles.heroImage} 
       />
